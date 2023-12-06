@@ -2,6 +2,17 @@
 session_start();
 require_once("conexao.php"); // Arquivo com a conexão ao banco de dados
 ?>
+<?php
+session_start();
+
+// Verifica se o usuário está autenticado
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php"); // Redireciona para a página de login se não estiver autenticado
+    exit();
+}
+
+// Resto do código da página principal aqui
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

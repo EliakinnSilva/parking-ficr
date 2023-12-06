@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.php">Home</a>
+        <?php
+        if (isset($_SESSION["usuario_id"])) {
+            echo "<a href='logout.php'>Logout</a>";
+        } else {
+            echo "<a href='login.php'>Login</a>";
+            echo "<a href='cadastro_usuario.php'>Cadastro de Usuário</a>";
+        }
+        ?>
+        <?php
+        // Links para as páginas de CRUD
+        if (isset($_SESSION["usuario_id"])) {
+            echo "<a href='usuarios.php'>CRUD de Usuários</a>";
+            echo "<a href='servicos.php'>CRUD de Serviços</a>";
+        }
+        ?>
+    </nav>
+
+
+
 <?php
 session_start();
 
@@ -24,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!-- Formulário de login no HTML -->
-<h2>Login Form</h2>
+
 
 <form action="/submit_login" method="post">
  <div class="container">
@@ -38,3 +72,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  </div>
 </form>
 
+</body>
+</html>
