@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 <nav>
-        <a href="index.php">Home</a>
+        <a href="index.html">Home</a>
         <?php
         if (isset($_SESSION["usuario_id"])) {
             echo "<a href='logout.php'>Logout</a>";

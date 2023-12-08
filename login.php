@@ -6,29 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+	  <link href="assets/css/coming-sssoon.css" rel="stylesheet" />    
+    
+    <!--     Fonts     -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.php">Home</a>
-        <?php
-        if (isset($_SESSION["usuario_id"])) {
-            echo "<a href='logout.php'>Logout</a>";
-        } else {
-            echo "<a href='login.php'>Login</a>";
-            echo "<a href='cadastro_usuario.php'>Cadastro de Usuário</a>";
-        }
-        ?>
-        <?php
-        // Links para as páginas de CRUD
-        if (isset($_SESSION["usuario_id"])) {
-            echo "<a href='usuarios.php'>CRUD de Usuários</a>";
-            echo "<a href='servicos.php'>CRUD de Serviços</a>";
-        }
-        ?>
-    </nav>
+<nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="index.html"> 
+                    HOME
+                </a>
+            </li>
+             <li>
+                <a href="login.php">
+                    LOGIN
+                </a>
+            </li>
+             <li>
+                <a href="cadastro_usuario.php">  
+                    CADASTRO
+                </a>
+            </li>
+       </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
 
 
 
