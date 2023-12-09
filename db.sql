@@ -9,10 +9,11 @@ CREATE TABLE IF NOT EXISTS usuarios (
     senha VARCHAR(255) NOT NULL
 );
 
--- Tabela para produtos ou serviços
-CREATE TABLE IF NOT EXISTS servicos (
+CREATE TABLE IF NOT EXISTS carros_estacionados (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
+    placa VARCHAR(20) NOT NULL,
+    carro VARCHAR(100) NOT NULL,
+    vaga VARCHAR(50) NOT NULL,
     descricao TEXT,
     preco DECIMAL(10, 2) NOT NULL
 );

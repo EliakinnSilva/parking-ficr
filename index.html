@@ -1,96 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	  <meta charset="utf-8" />
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-    <title>Sssoon Page </title>
+    <title>Parking-Ficr</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-	  <link href="assets/css/coming-sssoon.css" rel="stylesheet" />    
+    <link href="assets/css/coming-sssoon.css" rel="stylesheet" />    
     
-    <!--     Fonts     -->
+    <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-  
 </head>
 
 <body>
 <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="cadastro.html">CADASTRO</a></li>
+            </ul>
+        </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="index.html"> 
-                    HOME
-                </a>
-            </li>
-             <li>
-                <a href="login.html">
-                    LOGIN
-                </a>
-            </li>
-             <li>
-                <a href="cadastro.html">  
-                    CADASTRO
-                </a>
-            </li>
-       </ul>
-      
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
 </nav>
-<div class="main" style="background-image: url('assets/images/tela_\ placas_2.jpg')">
 
-<!--    Change the image source '/images/default.jpg' with your favourite image.     -->
-    
+<div class="main" style="background-image: url('assets/images/tela_\ placas_2.jpg')">
     <div class="cover black" data-color="black"></div>
-     
-<!--   You can change the black color for the filter with those colors: blue, green, red, orange       -->
 
     <div class="container">
-        <h1 class="logo cursive">
-            Parking-Ficr
-        </h1>
-<!--  H1 can have 2 designs: "logo" and "logo cursive"           -->
-        
-        <div  style="margin-bottom: 60px;" class="content">
-            <h4 class="motto">Encotre seu veiculo.</h4>
+        <h1 class="logo cursive">Parking-Ficr</h1>
+
+        <div style="margin-bottom: 60px;" class="content">
+            <h4 class="motto">Encontre seu veículo.</h4>
             <div class="subscribe">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3 ">
-                        <form class="form-inline" role="form">
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control transparent" placeholder="DIGITE SUA PLACA">
-                          </div>
-                          <button  type="submit" class="btn btn-danger btn-fill">Procurar</button>
+                    <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3">
+                        <form class="form-inline" role="form" id="searchForm">
+                            <div class="form-group">
+                                <label class="sr-only" for="placaInput">Digite sua placa</label>
+                                <input type="text" class="form-control transparent" placeholder="Digite sua placa" id="placaInput">
+                            </div>
+                            <!-- Ajuste o tipo do botão para "submit" -->
+                            <button type="submit" class="btn btn-danger btn-fill">Procurar</button>
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-      <div class="container">
-             Feito com <i class="fa fa-heart heart"></i></a>
-      </div>
-    </div>
- </div>
- </body>
-   <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-   <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
+    <div class="footer">
+        <div class="container">
+            Feito com <i class="fa fa-heart heart"></i></a>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script>
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        procurarCarro();
+    });
+
+    function procurarCarro() {
+        var placa = document.getElementById("placaInput").value;
+
+        // Lógica simulada de busca (substitua isso pela lógica real)
+        var carrosEstacionados = [
+            { placa: "123ABC", localizacao: "Rua A, Vaga 1" },
+            { placa: "456DEF", localizacao: "Rua B, Vaga 3" },
+            { placa: "789GHI", localizacao: "Estacionamento C, Vaga 5" }
+            // Adicione mais carros conforme necessário
+        ];
+
+        var carroEncontrado = carrosEstacionados.find(function (carro) {
+            return carro.placa === placa;
+        });
+
+        if (carroEncontrado) {
+            // Redirecionar para a página de resultados
+            window.location.href = "resultados.html";
+        } else {
+            alert("Veículo não encontrado. Tente novamente.");
+        }
+    }
+</script>
+
+</body>
 </html>
