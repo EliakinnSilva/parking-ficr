@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
-    <!-- Adicione a referência ao Bootstrap -->
+    <title>Recuperação de Senha</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
         body {
-            background: url('assets/images/cadastro.jpg') no-repeat center center fixed;
+            background: url('assets/images/root_66.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -29,19 +31,17 @@
         }
 
         .navbar-brand{
-            font-size: 2.9em;
+            font-size: 2.4em;
             margin: 10px;
             padding: 10px;
             font-family: 'Playfair Display', serif;
             color: #ffc107 !important;
-            
         }
 
         .navbar-brand:hover{
             font-weight: bolder;
             text-decoration: none;
             font-family: 'Playfair Display', serif;
-            
         }
 
 
@@ -74,13 +74,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a  class="nav-link" href="index.html">HOME </a>
+                    <a  class="nav-link" href="index.html">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">LOGIN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">CADASTRO</a>
+                    <a class="nav-link" href="cadastro.html">CADASTRO</a>
                 </li>
             </ul>
         </div>
@@ -88,22 +88,13 @@
 
     <div class="container">
         <div class="card custom-card">
-            <h2 class="mb-4">Cadastre-se</h2>
-            <form>
+            <h2 class="mb-4">Recuperação de Senha</h2>
+            <form id="recuperarSenhaForm">
                 <div class="form-group">
-                    <label for="email">nome:</label>
-                    <input type="text" class="form-control" id="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email">Email cadastrado:</label>
                     <input type="email" class="form-control" id="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <input type="password" class="form-control" id="senha" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Cadastre-se</button> <br> <br>
-                <a class="esqueceu" href="login.html">Já possui uma conta? <br>Faça seu login</a>
+                <button type="submit" class="btn btn-primary">Enviar Recuperação</button>
             </form>
         </div>
     </div>
@@ -112,14 +103,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Adicione scripts personalizados, se necessário -->
     <script>
-        // Adiciona uma classe ao navbar quando o usuário rolar a página
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 50) {
-                $('.navbar').addClass('navbar-scrolled');
-            } else {
-                $('.navbar').removeClass('navbar-scrolled');
-            }
+        $(document).ready(function() {
+            // Adiciona um evento de submit ao formulário de recuperação de senha
+            $("#recuperarSenhaForm").submit(function(event) {
+                // Impede o envio padrão do formulário
+                event.preventDefault();
+
+                // Lógica de processamento do pedido de recuperação de senha aqui
+
+                // Redireciona para a página inicial após o envio
+                window.location.href = "index.html";
+            });
         });
     </script>
 </body>
