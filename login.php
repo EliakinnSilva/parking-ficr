@@ -7,52 +7,47 @@
     <title>Login</title>
 
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-	  <link href="assets/css/coming-sssoon.css" rel="stylesheet" />    
-    
-    <!--     Fonts     -->
+    <link href="assets/css/coming-sssoon.css" rel="stylesheet" />
+
+    <!-- Fonts -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-<nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">  
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<nav class="navbar navbar-transparent navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="index.html">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="login.php">
+                        LOGIN
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastro_usuario.php">
+                        CADASTRO
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="index.html"> 
-                    HOME
-                </a>
-            </li>
-             <li>
-                <a href="login.php">
-                    LOGIN
-                </a>
-            </li>
-             <li>
-                <a href="cadastro_usuario.php">  
-                    CADASTRO
-                </a>
-            </li>
-       </ul>
-      
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
 </nav>
-
-
 
 <?php
 session_start();
@@ -79,20 +74,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!-- Formulário de login no HTML -->
 
+<!-- Formulário de login no HTML
+<form action="/submit_login" method="post" class="form-horizontal">
+    <div class="container">
+        <div class="form-group">
+            <label for="email" class="control-label col-sm-2"><b>Email</b></label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
+            </div>
+        </div>
 
-<form action="/submit_login" method="post">
- <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+        <div class="form-group">
+            <label for="senha" class="control-label col-sm-2"><b>Password</b></label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="Enter Password" name="senha" required>
+            </div>
+        </div>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+</form> -->
 
-    <button type="submit">Login</button>
- </div>
-</form>
+<!-- Inclua os scripts do Bootstrap no final do corpo do documento para melhor desempenho -->
+<script src="assets/js/jquery-3.6.4.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
 </body>
 </html>
